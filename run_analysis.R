@@ -11,7 +11,7 @@ train.subject <- read.table("./train/subject_train.txt")
 train.x <- read.table("./train/X_train.txt")
 train.y <- read.table("./train/y_train.txt")
 
-features <- read.table("./features.txt")
+features <- read.table("./features.txt") ##The complete list of variables of each feature vector is available in 'features.txt'
 activity.labels <- read.table("./activity_labels.txt")
 
 # rbind(Merge) Test, Train(ing) , and subject datasets- where 70% of the volunteers was selected for generating the training data and 30% the test data.
