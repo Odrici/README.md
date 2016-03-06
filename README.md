@@ -1,44 +1,40 @@
-# README.md / Getting and Cleaning Data Course Project
+ Getting and Cleaning Data Course Project/ README.md
 
  PROJECT INFORMATION:
 Experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist.
-DATA SOURCE:
-Using embedded accelerometer and gyroscope,  3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz were captured. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
-DATA MEASUREMENTS:
-A total of 33 measurements were collected including the 3 dimensions  X,Y, and Z axes.
--The units given are g’s for the accelerometer and rad/sec for the gyro and g/sec and rad/sec/sec for the corresponding jerks.
--leading t or f is based on time or frequency measurements
-These signals were used to estimate variables of the feature vector for each pattern:
-tBodyAcc-XYZ;
-tGravityAcc-XYZ;
-tBodyAccJerk-XYZ;
-tBodyGyro-XYZ;
-tBodyGyroJerk-XYZ;
-tBodyAccMag;
-tGravityAccMag;
-tBodyAccJerkMag;
-tBodyGyroMag;
-tBodyGyroJerkMag;
-fBodyAcc-XYZ;
-fBodyAccJerk-XYZ;
-fBodyGyro-XYZ;
-fBodyAccMag;
-fBodyAccJerkMag;
-fBodyGyroMag;
-fBodyGyroJerkMag;
+Data Source:
+ full description is available at the site where the data was obtained:
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+The data is available at:
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+Data Analysis:
+#Libraries used:  reshape2, data. Table
+# Load the various datasets
+	"./test/subject_test.txt")
+	"./test/x_test.txt")
+	"./test/y_test.txt")
 
-Body = related to body movement.
-Gravity = acceleration of gravity
-Acc = accelerometer measurement
-Gyro = gyroscopic measurements
-Jerk = sudden movement acceleration
-Mag = magnitude of movement
+	"./train/subject_train.txt")
+	"./train/x_train.txt")
+	"./train/y_train.txt")
+	
+	"./features.txt")
+	"./activity_labels.txt")
 
-The set of variables that were estimated from these signals are:
-
-mean(): Mean value -calculated for each subject for each activity 
-std(): Standard deviation -calculated for each subject for each activity 
+# Merge the test and train subject datasets
+# Merge the test and train labels, applying the textual labels
  
-   
-   
- 
+	• activity. Labels:      V1        V2
+			1                          WALKING
+			2                  WALKING_UPSTAIRS
+			3                  WALKING_DOWNSTAIRS
+			4                           SITTING
+			5                             STANDING
+			6                             LAYING
+	•  data. Frame:    10299 obs. of  563 variables
+
+# Merge all three datasets
+
+# Subset the merged data to include only the mean and std variables
+# Compute the means, grouped by subject/label
+# Output final tidy dataset
