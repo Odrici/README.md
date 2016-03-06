@@ -33,12 +33,9 @@ data <- cbind(subject, labelmerged, data)
 search <- grep("-mean|-std", colnames(data))
 data.mean.std <- data[,c(1,2,search)]
 
-# Compute the means, grouped by subject/label
-melted = melt(data.mean.std, c("subject", "label"))
-means = dcast(melted , subject + label ~ variable, mean)
 
 # Save the resulting dataset
-write.table(means, file="./data/tidy_data.csv")
+write.table(data.mean.std, file="./tidy_data.txt")
 
-# Output final tidy_data dataset
-means
+# Output final tidy_data.txt
+
